@@ -1,0 +1,6 @@
+{
+  "source": "https://skimdb.npmjs.com/registry/",
+  "target": "registry",
+  "create_target": true,
+  "continuous": true
+}
