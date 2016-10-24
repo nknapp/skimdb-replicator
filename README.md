@@ -14,8 +14,9 @@ If you setup the credentials elsewhere, you can provide them to the replicator u
 For volumes, exposed ports and other configuration examples, please refer to the [documentation of
 the couchdb docker-image](https://hub.docker.com/_/couchdb/)
 
-Note that skimdb is using couchdb 2.0 while this couchdb is still 1.6. Replication seems to work across
-these versions.
+*Note that skimdb is using couchdb 2.0 while this couchdb is still 1.6. Replication seems to work across
+these versions.*
+
 
 # Related
 
