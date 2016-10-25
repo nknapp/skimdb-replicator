@@ -9,9 +9,9 @@ if [ "$LOGIN" ] && [ "$PASSWORD" ]; then
         sleep 3
 
 
-        #curl --silent -X POST "http://localhost:5984/_replicate" \
-        #   -d '@/replicator.json' \
-        #   -H "Content-Type: application/json"
+        curl --silent -X POST "http://localhost:5984/_replicate" \
+           -d '@/replicator.json' \
+           -H "Content-Type: application/json"
 
         echo "skimdb replicator set up"
 
