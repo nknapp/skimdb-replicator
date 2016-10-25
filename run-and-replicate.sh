@@ -9,7 +9,7 @@ if [ "$LOGIN" ] && [ "$PASSWORD" ]; then
         sleep 3
 
 
-        curl --silent -X POST "http://localhost:5984/_replicate" \
+        curl --silent -u "${LOGIN}:${PASSWORD}" -X POST "http://localhost:5984/_replicate" \
            -d '@/replicator.json' \
            -H "Content-Type: application/json"
 
