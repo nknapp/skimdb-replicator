@@ -8,13 +8,17 @@ if [ "$LOGIN" ] && [ "$PASSWORD" ]; then
         # Wait for couchdb to come up
         sleep 3
 
+        # Try starting replication regularly, in case it crashes
+        while true ; do
+            curl --silent -u "${LOGIN}:${PASSWORD}" -X POST "http://localhost:5984/_replicate" \
+               -d '@/replicator.json' \
+               -H "Content-Type: application/json"
 
-        curl --silent -u "${LOGIN}:${PASSWORD}" -X POST "http://localhost:5984/_replicate" \
-           -d '@/replicator.json' \
-           -H "Content-Type: application/json"
+            echo "skimdb replicator set up"
 
-        echo "skimdb replicator set up"
-
+            # Retry once an hour
+            sleep 3600
+        done
     ) &
 else
     # The - option suppresses leading tabs but *not* spaces. :)
